@@ -1,3 +1,5 @@
+@use "constants";
+
 @mixin btn-main {
     padding: 0.5rem 1rem;
     border-radius: 0.35rem;
@@ -8,22 +10,15 @@
     padding: 0.3rem 0.8rem;
 }
 
-$primary-color: rgb(0, 82, 255);
-$primary-text-color: rgb(255, 255, 255);
-$secondary-color: transparent;
-$secondary-text-color: rgb(0, 0, 0);
-$btn-sec-text-hover-color: rgb(136, 136, 136);
-$icon-shadow-color: rgba(0,0,0,.48);
-
 .btn-main {
     @include btn-main();
-    background-color: $primary-color;
-    color: $primary-text-color;
-    border: 1px solid $primary-color;
+    background-color: constants.$primary-color;
+    color: constants.$primary-text-color;
+    border: 1px solid constants.$primary-color;
 
     &:hover {
-        background-color: $primary-text-color;
-        color: $primary-color;
+        background-color: constants.$primary-text-color;
+        color: constants.$primary-color;
     }
 
     &-s {
@@ -34,12 +29,12 @@ $icon-shadow-color: rgba(0,0,0,.48);
 
 .btn-sec {
     @include btn-main();
-    color: $secondary-text-color;
-    background-color: $secondary-color;
+    color: constants.$secondary-text-color;
+    background-color: constants.$secondary-color;
     border: none;
 
     &:hover {
-        color: $btn-sec-text-hover-color;
+        color: constants.$btn-sec-text-hover-color;
     }
 
     &-s {
@@ -74,9 +69,9 @@ $icon-shadow-color: rgba(0,0,0,.48);
     i {
         font-size: 1.5rem;
         padding: .55rem;
-        color: $primary-color;
+        color: constants.$primary-color;
         border-radius: 50%;
-        box-shadow: 0 0 10px $icon-shadow-color;
+        box-shadow: 0 0 10px constants.$icon-shadow-color;
     }
 }
 
@@ -86,7 +81,7 @@ $icon-shadow-color: rgba(0,0,0,.48);
     text-align: center;
 
     .icon {
-        color: $primary-color;
+        color: constants.$primary-color;
         font-size: 5rem;
     }
 
@@ -101,7 +96,7 @@ $icon-shadow-color: rgba(0,0,0,.48);
     }
 
     .call-to-action {
-        color: $primary-color;
+        color: constants.$primary-color;
     }
 }
 
@@ -111,7 +106,7 @@ $icon-shadow-color: rgba(0,0,0,.48);
     align-items: center;
     .icon {
         padding: 0;
-        color: $primary-color;
+        color: constants.$primary-color;
         font-size: 5rem;
     }
 

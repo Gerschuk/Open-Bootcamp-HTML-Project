@@ -13,26 +13,37 @@ h3 {
 }
 
 header {
-    width: 100%;
+    border-bottom: solid 1px #ddd;
 
     .nav {
-        display: flex;
-        justify-content: space-around;
-        align-content: center;
         height: 4rem;
-        border-bottom: solid 1px #ddd;
     }
 
-    .logo>a>img {
-        max-width: 9rem;
-        padding-top: 4.5%;
+    .navbar-brand {
+        .logo {
+            max-width: 9rem;
+        }
+    }
+
+    .navbar-collapse {
+        background-color: constants.$primary-text-color;
+        padding: 1rem;
+    }
+
+    .get-started {
+        padding: 0;
+    }
+
+    @media screen and (min-width:1200px) {
+        .container-fluid {
+            padding-left: 4%;
+        }
     }
 }
 
 .sec-home {
     display: flex;
     align-items: center;
-    width: 100%;
     max-height: 100vh;
 
     .home-cta {
@@ -60,6 +71,32 @@ header {
         }
 
         @include mixins.ctas();
+
+        form {
+            input {
+                width: 100%
+            }
+
+            button {
+                margin-top: 1rem;
+                width: 100%;
+            }
+
+            @media screen and (min-width: 1200px) {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                input {
+                    flex: 1 1 70%;
+                }
+
+                button {
+                    flex: 1 1 20%;
+                    margin: 0 0 0 1rem;
+                }
+            }
+        }
     }
 
     @include mixins.ctas-image();
@@ -77,6 +114,12 @@ header {
         align-items: flex-start;
         justify-content: space-evenly;
     }
+
+    @media screen and (max-width:1200px) {
+        .benefits-img {
+            display: none;
+        }
+    }
 }
 
 .sec-features {
@@ -92,6 +135,7 @@ header {
             cursor: pointer;
         }
     }
+
 }
 
 .sec-kpis {
@@ -127,9 +171,7 @@ header {
 }
 
 .sec-promotion {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
     background-color: constants.$background-promotion-section;
 
     .promotion-cta {
@@ -154,54 +196,56 @@ header {
 
 footer {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-areas: "brand-column about-us-column individuals-column assist-column resources-column developers-column";
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: "brand-column" "about-us-column" "individuals-column" "assist-column" "resources-column" "developers-column";
 
 
     .brand-column {
         grid-area: brand-column;
-        @include mixins.flex-column();
+        @include mixins.flex();
         color: constants.$secondary-text-color;
 
         .logo {
             max-width: 10rem;
         }
 
-        p{
+        p {
             margin-bottom: .4rem;
         }
 
-       ul {
-        list-style: none;
-        display: flex;
-        justify-content: space-around;
-        padding: 0;
-       }
+        ul {
+            width: 100%;
+            list-style: none;
+            @include mixins.flex(row, space-evenly, null);
+            padding: 0;
+        }
     }
 
     .about-us-column {
         grid-area: about-us-column;
-        @include mixins.flex-column();
+        @include mixins.flex();
+
     }
 
     .individuals-column {
         grid-area: individuals-column;
-        @include mixins.flex-column();
+        @include mixins.flex();
+
     }
 
     .assist-column {
         grid-area: assist-column;
-        @include mixins.flex-column();
+        @include mixins.flex();
     }
 
     .resources-column {
         grid-area: resources-column;
-        @include mixins.flex-column();
+        @include mixins.flex();
     }
 
     .developers-column {
         grid-area: developers-column;
-        @include mixins.flex-column();
+        @include mixins.flex();
     }
 
     a {
@@ -211,6 +255,35 @@ footer {
 
         &:hover {
             color: constants.$secondary-text-color;
+        }
+    }
+
+    .validators {
+        @include mixins.flex(row,center,center);
+    }
+    @media screen and (min-width: 1200px) {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 1fr;
+        grid-template-areas: "brand-column about-us-column individuals-column assist-column resources-column developers-column";
+
+        .about-us-column {
+            @include mixins.flex(null, null, flex-start);
+        }
+
+        .individuals-column {
+            @include mixins.flex(null, null, flex-start);
+        }
+
+        .assist-column {
+            @include mixins.flex(null, null, flex-start)
+        }
+
+        .resources-column {
+            @include mixins.flex(null, null, flex-start);
+        }
+
+        .developers-column {
+            @include mixins.flex(null, null, flex-start);
         }
     }
 }

@@ -28,7 +28,6 @@
 @mixin ctas {
     .cta-title {
         font-weight: 600;
-        width: 20rem;
         margin-top: 1rem;
     }
 
@@ -42,10 +41,19 @@
     .cta-img {
         flex: 0.8;
     }
+
+    @media (max-width:1200px) {
+        .cta-img {
+            display: none;
+        }
+    }
 }
 
-@mixin flex-column {
+@mixin flex ($direction: column, $justify:flex-start, $align: center){
     display: flex;
-    flex-direction: column;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
     padding: 1rem;
 }
+

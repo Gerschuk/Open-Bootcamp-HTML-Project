@@ -22,7 +22,7 @@
     @include mixins.btn-main();
     color: constants.$secondary-text-color;
     background-color: constants.$secondary-color;
-    border: none;
+    border: 1px solid constants.$primary-color;
 
     &:hover {
         color: constants.$btn-sec-text-hover-color;
@@ -83,8 +83,9 @@
         .title {
             font-size: 1.5rem;
         }
+
         .text {
-            color: rgba(100,100,100);
+            color: rgba(100, 100, 100);
             font-size: 1.1rem;
             padding: 0 .2rem;
         }
@@ -104,11 +105,24 @@
     .icon {
         padding: 0;
         color: constants.$primary-color;
-        font-size: 5rem;
+        font-size: 2rem;
+
     }
 
     .title {
         font-size: 1.2rem;
         font-weight: 600;
+    }
+
+    @media screen and (min-width:1200px) {
+        .icon {
+            font-size: 5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .xl-display-none {
+        display: none;
     }
 }

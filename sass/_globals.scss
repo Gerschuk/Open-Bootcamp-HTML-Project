@@ -1,10 +1,15 @@
 @use "constants";
+@use "mixins";
 
 body {
     padding: 0;
     margin: 0;
-    width: 100vw;
     min-height: 100vh;
+    background-color: constants.$background-color;
+}
+
+h3 {
+    font-size: 1.5rem;
 }
 
 header {
@@ -54,19 +59,158 @@ header {
             }
         }
 
-        .home-title {
-            font-weight: 600;
-            width: 20rem;
-            margin-top: 1rem;
+        @include mixins.ctas();
+    }
+
+    @include mixins.ctas-image();
+}
+
+.sec-benefits {
+    width: 100%;
+
+    .sec-intro {
+        @include mixins.sec-intro-center();
+    }
+
+    .benefit {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-evenly;
+    }
+}
+
+.sec-features {
+    @include mixins.sec-intro-center();
+    width: 100%;
+
+    a {
+        color: constants.$primary-color;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
+
+.sec-kpis {
+    width: 100%;
+    background-color: constants.$primary-color;
+
+    .kpi {
+        font-weight: 600;
+        padding: 1rem;
+
+        .kpi-element {
+            color: constants.$primary-text-color;
+            font-size: 3rem;
         }
 
-        .home-description {
-            font-size: 1.2rem;
-            font-weight: 600;
+        p {
+            color: rgba(255, 255, 255, .6);
         }
     }
 
-    .home-img {
-        flex: 1;
+}
+
+.sec-onboarding {
+    width: 100%;
+
+    .sec-intro {
+        @include mixins.sec-intro-center();
+    }
+
+    hr {
+        width: 15%;
+    }
+}
+
+.sec-promotion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: constants.$background-promotion-section;
+
+    .promotion-cta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-basis: 50%;
+        padding: 0 10%;
+
+        .text-cta {
+            @include mixins.ctas();
+        }
+
+        .btn-main {
+            align-self: flex-start
+        }
+    }
+
+    @include mixins.ctas-image;
+
+}
+
+footer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "brand-column about-us-column individuals-column assist-column resources-column developers-column";
+
+
+    .brand-column {
+        grid-area: brand-column;
+        @include mixins.flex-column();
+        color: constants.$secondary-text-color;
+
+        .logo {
+            max-width: 10rem;
+        }
+
+        p{
+            margin-bottom: .4rem;
+        }
+
+       ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+       }
+    }
+
+    .about-us-column {
+        grid-area: about-us-column;
+        @include mixins.flex-column();
+    }
+
+    .individuals-column {
+        grid-area: individuals-column;
+        @include mixins.flex-column();
+    }
+
+    .assist-column {
+        grid-area: assist-column;
+        @include mixins.flex-column();
+    }
+
+    .resources-column {
+        grid-area: resources-column;
+        @include mixins.flex-column();
+    }
+
+    .developers-column {
+        grid-area: developers-column;
+        @include mixins.flex-column();
+    }
+
+    a {
+        cursor: pointer;
+        text-decoration: none;
+        color: constants.$secondary-text-color;
+
+        &:hover {
+            color: constants.$secondary-text-color;
+        }
     }
 }

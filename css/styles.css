@@ -17,7 +17,7 @@
 .btn-sec, .btn-sec-s {
   padding: 0.5rem 1rem;
   border-radius: 0.35rem;
-  color: rgb(0, 0, 0);
+  color: rgb(108, 117, 125);
   background-color: transparent;
   border: none;
 }
@@ -43,37 +43,42 @@
 .main-menu li a {
   color: rgb(0, 0, 0);
   text-decoration: none;
+  font-weight: 500;
 }
 .main-menu li:hover {
   text-decoration: underline;
 }
 
-.icon-sm i {
-  font-size: 1.5rem;
-  padding: 0.55rem;
+.icon-md i {
+  font-size: 2.5rem;
+  padding: 1rem;
   color: rgb(0, 82, 255);
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.48);
+  box-shadow: 0 8px 8px rgb(245, 247, 249);
 }
 
 .feature {
   display: flex;
   flex-direction: column;
   text-align: center;
+  justify-items: stretch;
+  align-items: center;
 }
 .feature .icon {
   color: rgb(0, 82, 255);
-  font-size: 5rem;
+  font-size: 3.5rem;
 }
 .feature .description .title {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .feature .description .text {
   color: rgb(100, 100, 100);
-  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0 0.2rem;
 }
 .feature .call-to-action {
   color: rgb(0, 82, 255);
+  font-weight: 500;
 }
 
 .icon-description {
@@ -87,15 +92,19 @@
   font-size: 5rem;
 }
 .icon-description .title {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
 body {
   padding: 0;
   margin: 0;
-  width: 100vw;
   min-height: 100vh;
+  background-color: rgb(254, 254, 255);
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 header {
@@ -139,17 +148,178 @@ header .logo > a > img {
 .sec-home .home-cta .cta-text > a {
   text-decoration: none;
 }
-.sec-home .home-cta .home-title {
+.sec-home .home-cta .cta-title {
   font-weight: 600;
   width: 20rem;
   margin-top: 1rem;
 }
-.sec-home .home-cta .home-description {
+.sec-home .home-cta .cta-description {
   font-size: 1.2rem;
   font-weight: 600;
 }
-.sec-home .home-img {
-  flex: 1;
+.sec-home .cta-img {
+  flex: 0.8;
+}
+
+.sec-benefits {
+  width: 100%;
+}
+.sec-benefits .sec-intro {
+  text-align: center;
+}
+.sec-benefits .sec-intro h2 {
+  font-weight: 500;
+}
+.sec-benefits .sec-intro p {
+  color: rgb(108, 117, 125);
+}
+.sec-benefits .benefit {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.sec-features {
+  text-align: center;
+  width: 100%;
+}
+.sec-features h2 {
+  font-weight: 500;
+}
+.sec-features p {
+  color: rgb(108, 117, 125);
+}
+.sec-features a {
+  color: rgb(0, 82, 255);
+  text-decoration: none;
+}
+.sec-features a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.sec-kpis {
+  width: 100%;
+  background-color: rgb(0, 82, 255);
+}
+.sec-kpis .kpi {
+  font-weight: 600;
+  padding: 1rem;
+}
+.sec-kpis .kpi .kpi-element {
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+}
+.sec-kpis .kpi p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.sec-onboarding {
+  width: 100%;
+}
+.sec-onboarding .sec-intro {
+  text-align: center;
+}
+.sec-onboarding .sec-intro h2 {
+  font-weight: 500;
+}
+.sec-onboarding .sec-intro p {
+  color: rgb(108, 117, 125);
+}
+.sec-onboarding hr {
+  width: 15%;
+}
+
+.sec-promotion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(245, 248, 255);
+}
+.sec-promotion .promotion-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 50%;
+  padding: 0 10%;
+}
+.sec-promotion .promotion-cta .text-cta .cta-title {
+  font-weight: 600;
+  width: 20rem;
+  margin-top: 1rem;
+}
+.sec-promotion .promotion-cta .text-cta .cta-description {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.sec-promotion .promotion-cta .btn-main {
+  align-self: flex-start;
+}
+.sec-promotion .cta-img {
+  flex: 0.8;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas: "brand-column about-us-column individuals-column assist-column resources-column developers-column";
+}
+footer .brand-column {
+  grid-area: brand-column;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  color: rgb(108, 117, 125);
+}
+footer .brand-column .logo {
+  max-width: 10rem;
+}
+footer .brand-column p {
+  margin-bottom: 0.4rem;
+}
+footer .brand-column ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
+footer .about-us-column {
+  grid-area: about-us-column;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+footer .individuals-column {
+  grid-area: individuals-column;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+footer .assist-column {
+  grid-area: assist-column;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+footer .resources-column {
+  grid-area: resources-column;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+footer .developers-column {
+  grid-area: developers-column;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+footer a {
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(108, 117, 125);
+}
+footer a:hover {
+  color: rgb(108, 117, 125);
 }
 
 /*# sourceMappingURL=styles.css.map */

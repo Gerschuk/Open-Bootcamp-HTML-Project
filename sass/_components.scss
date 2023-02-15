@@ -1,17 +1,8 @@
 @use "constants";
-
-@mixin btn-main {
-    padding: 0.5rem 1rem;
-    border-radius: 0.35rem;
-}
-
-@mixin btn-sm-modify {
-    font-size: 0.8rem;
-    padding: 0.3rem 0.8rem;
-}
+@use "mixins";
 
 .btn-main {
-    @include btn-main();
+    @include mixins.btn-main();
     background-color: constants.$primary-color;
     color: constants.$primary-text-color;
     border: 1px solid constants.$primary-color;
@@ -23,12 +14,12 @@
 
     &-s {
         @extend .btn-main;
-        @include btn-sm-modify();
+        @include mixins.btn-sm-modify();
     }
 }
 
 .btn-sec {
-    @include btn-main();
+    @include mixins.btn-main();
     color: constants.$secondary-text-color;
     background-color: constants.$secondary-color;
     border: none;
@@ -39,7 +30,7 @@
 
     &-s {
         @extend .btn-sec;
-        @include btn-sm-modify();
+        @include mixins.btn-sm-modify();
     }
 }
 
@@ -57,6 +48,7 @@
         a {
             color: rgb(0, 0, 0);
             text-decoration: none;
+            font-weight: 500;
         }
 
         &:hover {
@@ -65,13 +57,13 @@
     }
 }
 
-.icon-sm {
+.icon-md {
     i {
-        font-size: 1.5rem;
-        padding: .55rem;
+        font-size: 2.5rem;
+        padding: 1rem;
         color: constants.$primary-color;
         border-radius: 50%;
-        box-shadow: 0 0 10px constants.$icon-shadow-color;
+        box-shadow: 0 8px 8px constants.$icon-shadow-color;
     }
 }
 
@@ -79,24 +71,28 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-items: stretch;
+    align-items: center;
 
     .icon {
         color: constants.$primary-color;
-        font-size: 5rem;
+        font-size: 3.5rem;
     }
 
     .description {
         .title {
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
         .text {
             color: rgba(100,100,100);
-            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0 .2rem;
         }
     }
 
     .call-to-action {
         color: constants.$primary-color;
+        font-weight: 500;
     }
 }
 
@@ -104,6 +100,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
     .icon {
         padding: 0;
         color: constants.$primary-color;
@@ -111,7 +108,7 @@
     }
 
     .title {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         font-weight: 600;
     }
 }

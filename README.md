@@ -20,8 +20,11 @@ Project for OpenBootcamp made with:
 
 **Attached PDFs show the site finished**
 
-- Mobile: [mobile-screen-capture-OB-HTML-Project-Coinbase-Clone.pdf](https://github.com/Gerschuk/OB-HTML-Project/files/10760355/mobile-screen-capture-OB-HTML-Project-Coinbase-Clone.pdf)
-- Tablet[tablet-screen-capture-OB-HTML-Project-Coinbase-Clone.pdf](https://github.com/Gerschuk/OB-HTML-Project/files/10760356/tablet-screen-capture-OB-HTML-Project-Coinbase-Clone.pdf)
-- Desktop [desktop-screen-capture-OB-HTML-Project-Coinbase-Clone.pdf](https://github.com/Gerschuk/OB-HTML-Project/files/10760357/desktop-screen-capture-OB-HTML-Project-Coinbase-Clone.pdf)
+- Mobile:![mobile-screen-capture-OB-HTML-Project-Coinbase-Clone](https://user-images.githubusercontent.com/110862203/219497677-3510a7c8-8cdb-46b2-820d-85ce2b9e7b18.png)
+- Tablet: ![tablet-screen-capture-OB-HTML-Project-Coinbase-Clone](https://user-images.githubusercontent.com/110862203/219497763-48eee2f5-635e-4a02-ad92-21ec32dc3b54.png)
+- Desktop: ![desktop-screen-capture-OB-HTML-Project-Coinbase-Clone](https://user-images.githubusercontent.com/110862203/219497792-5a8637ae-b0bc-49d2-849a-febf85798862.png)
 
 Any comment is well recived to improve my skills. I won't refactor the code yet because I need to continue studing other tools.
+
+
+

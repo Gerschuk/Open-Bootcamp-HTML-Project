@@ -6,6 +6,8 @@ body {
     margin: 0;
     min-height: 100vh;
     background-color: constants.$background-color;
+    color: constants.$body-text-color;
+    line-height: 1.6rem;
 }
 
 h3 {
@@ -13,10 +15,12 @@ h3 {
 }
 
 header {
-    border-bottom: solid 1px #ddd;
-
     .nav {
         height: 4rem;
+
+        .container-fluid {
+            border-bottom: solid 1px #ddd;
+        }
     }
 
     .navbar-brand {
@@ -27,11 +31,16 @@ header {
 
     .navbar-collapse {
         background-color: constants.$primary-text-color;
+        color: constants.$body-text-color;
         padding: 1rem;
     }
 
     .get-started {
         padding: 0;
+    }
+
+    .navbar-toggler:checked {
+        border-bottom: constants.$primary-color;
     }
 
     @media screen and (min-width:1200px) {
@@ -50,9 +59,9 @@ header {
         flex: 1;
 
         .cta-text {
+            font-size: 16px;
             display: flex;
-            color: constants.$primary-color;
-            font-weight: 500;
+            font-weight: 600;
 
             .bi-currency-bitcoin {
                 background-color: constants.$primary-color;
@@ -67,6 +76,8 @@ header {
 
             &>a {
                 text-decoration: none;
+                color: constants.$primary-color;
+                background-color: constants.$background-color;
             }
         }
 
@@ -74,7 +85,14 @@ header {
 
         form {
             input {
-                width: 100%
+                width: 100%;
+                border: 1px solid constants.$secondary-text-color;
+
+                &:focus {
+                    outline: 1px solid constants.$primary-color;
+                    border: none;
+                    box-shadow: 0 0 10px constants.$primary-color;
+                }
             }
 
             button {
@@ -82,7 +100,7 @@ header {
                 width: 100%;
             }
 
-            @media screen and (min-width: 1200px) {
+            @media screen and (min-width: 768px) {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -115,7 +133,7 @@ header {
         justify-content: space-evenly;
     }
 
-    @media screen and (max-width:1200px) {
+    @media screen and (max-width: 1200px) {
         .benefits-img {
             display: none;
         }
@@ -128,6 +146,7 @@ header {
 
     a {
         color: constants.$primary-color;
+        background-color: transparent;
         text-decoration: none;
 
         &:hover {
@@ -141,18 +160,16 @@ header {
 .sec-kpis {
     width: 100%;
     background-color: constants.$primary-color;
+    color: constants.$body-text-color;
 
     .kpi {
         font-weight: 600;
         padding: 1rem;
+        color: constants.$primary-text-color;
+        background-color: transparent;
 
         .kpi-element {
-            color: constants.$primary-text-color;
             font-size: 3rem;
-        }
-
-        p {
-            color: rgba(255, 255, 255, .6);
         }
     }
 
@@ -173,6 +190,7 @@ header {
 .sec-promotion {
 
     background-color: constants.$background-promotion-section;
+    color: constants.$body-text-color;
 
     .promotion-cta {
         display: flex;
@@ -184,19 +202,22 @@ header {
         .text-cta {
             @include mixins.ctas();
         }
-
-        .btn-main {
-            align-self: flex-start
-        }
     }
 
     @include mixins.ctas-image;
 
 }
 
+small {
+    a {
+        color: constants.$primary-color;
+        background-color: constants.$background-color;
+    }
+}
+
 footer {
     display: grid;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 0.5fr);
     grid-template-areas: "brand-column" "about-us-column" "individuals-column" "assist-column" "resources-column" "developers-column";
 
 
@@ -204,6 +225,9 @@ footer {
         grid-area: brand-column;
         @include mixins.flex();
         color: constants.$secondary-text-color;
+        background-color: transparent;
+        max-width: 80%;
+        justify-self: center;
 
         .logo {
             max-width: 10rem;
@@ -252,15 +276,19 @@ footer {
         cursor: pointer;
         text-decoration: none;
         color: constants.$secondary-text-color;
+        background-color: transparent;
 
         &:hover {
             color: constants.$secondary-text-color;
+            background-color: transparent
         }
     }
 
     .validators {
-        @include mixins.flex(row,center,center);
+        grid-area: brand-column;
+        @include mixins.flex(row, center, center);
     }
+
     @media screen and (min-width: 1200px) {
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: 1fr;
@@ -284,6 +312,10 @@ footer {
 
         .developers-column {
             @include mixins.flex(null, null, flex-start);
+        }
+
+        h4 {
+            font-size: 1rem;
         }
     }
 }

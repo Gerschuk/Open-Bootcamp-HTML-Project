@@ -4,6 +4,11 @@
 @mixin btn-main {
     padding: 0.5rem 1rem;
     border-radius: 0.35rem;
+    width: 100%;
+
+    @media screen and (min-width:1200px) {
+        width: initial;
+    }
 }
 
 @mixin btn-sm-modify {
@@ -22,6 +27,7 @@
 
     p {
         color: constants.$secondary-text-color;
+        background-color: transparent;
     }
 }
 
@@ -42,7 +48,7 @@
         flex: 0.8;
     }
 
-    @media (max-width:1200px) {
+    @media (max-width:768px) {
         .cta-img {
             display: none;
         }

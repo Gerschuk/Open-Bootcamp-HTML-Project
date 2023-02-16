@@ -1,13 +1,20 @@
 .btn-main, .btn-main-s {
   padding: 0.5rem 1rem;
   border-radius: 0.35rem;
-  background-color: rgb(0, 82, 255);
+  width: 100%;
+  background-color: #005aec;
   color: rgb(255, 255, 255);
-  border: 1px solid rgb(0, 82, 255);
+  border: none;
+}
+@media screen and (min-width: 1200px) {
+  .btn-main, .btn-main-s {
+    width: initial;
+  }
 }
 .btn-main:hover, .btn-main-s:hover {
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 82, 255);
+  color: rgb(108, 117, 125);
+  background-color: transparent;
+  border: 1px solid #005aec;
 }
 .btn-main-s {
   font-size: 0.8rem;
@@ -17,12 +24,19 @@
 .btn-sec, .btn-sec-s {
   padding: 0.5rem 1rem;
   border-radius: 0.35rem;
+  width: 100%;
   color: rgb(108, 117, 125);
   background-color: transparent;
-  border: 1px solid rgb(0, 82, 255);
+  border: none;
+}
+@media screen and (min-width: 1200px) {
+  .btn-sec, .btn-sec-s {
+    width: initial;
+  }
 }
 .btn-sec:hover, .btn-sec-s:hover {
-  color: rgb(136, 136, 136);
+  outline: 1px solid #005aec;
+  box-shadow: 0 0 8px #005aec;
 }
 .btn-sec-s {
   font-size: 0.8rem;
@@ -44,6 +58,7 @@
   color: rgb(0, 0, 0);
   text-decoration: none;
   font-weight: 500;
+  background-color: transparent;
 }
 .main-menu li:hover {
   text-decoration: underline;
@@ -52,7 +67,8 @@
 .icon-md i {
   font-size: 2.5rem;
   padding: 1rem;
-  color: rgb(0, 82, 255);
+  color: #005aec;
+  background-color: transparent;
   border-radius: 50%;
   box-shadow: 0 8px 8px rgb(245, 247, 249);
 }
@@ -65,7 +81,8 @@
   align-items: center;
 }
 .feature .icon {
-  color: rgb(0, 82, 255);
+  color: #005aec;
+  background-color: transparent;
   font-size: 3.5rem;
 }
 .feature .description .title {
@@ -73,11 +90,18 @@
 }
 .feature .description .text {
   color: rgb(100, 100, 100);
+  background-color: transparent;
   font-size: 1.1rem;
   padding: 0 0.2rem;
 }
+@media screen and (min-height: 768px) {
+  .feature .description .text {
+    width: 50ch;
+  }
+}
 .feature .call-to-action {
-  color: rgb(0, 82, 255);
+  color: #005aec;
+  background-color: transparent;
   font-weight: 500;
 }
 
@@ -85,23 +109,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  padding-bottom: 1.5rem;
 }
 .icon-description .icon {
-  padding: 0;
-  color: rgb(0, 82, 255);
-  font-size: 2rem;
+  color: #005aec;
+  background-color: transparent;
+  font-size: 4rem;
 }
 .icon-description .title {
-  font-size: 1.2rem;
   font-weight: 600;
 }
-@media screen and (min-width: 1200px) {
-  .icon-description .icon {
-    font-size: 5rem;
-  }
-}
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 768px) {
   .xl-display-none {
     display: none;
   }
@@ -110,28 +130,34 @@ body {
   padding: 0;
   margin: 0;
   min-height: 100vh;
-  background-color: rgb(254, 254, 255);
+  background-color: #fefeff;
+  color: rgb(0, 0, 0);
+  line-height: 1.6rem;
 }
 
 h3 {
   font-size: 1.5rem;
 }
 
-header {
-  border-bottom: solid 1px #ddd;
-}
 header .nav {
   height: 4rem;
+}
+header .nav .container-fluid {
+  border-bottom: solid 1px #ddd;
 }
 header .navbar-brand .logo {
   max-width: 9rem;
 }
 header .navbar-collapse {
   background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   padding: 1rem;
 }
 header .get-started {
   padding: 0;
+}
+header .navbar-toggler:checked {
+  border-bottom: #005aec;
 }
 @media screen and (min-width: 1200px) {
   header .container-fluid {
@@ -148,12 +174,12 @@ header .get-started {
   flex: 1;
 }
 .sec-home .home-cta .cta-text {
+  font-size: 16px;
   display: flex;
-  color: rgb(0, 82, 255);
-  font-weight: 500;
+  font-weight: 600;
 }
 .sec-home .home-cta .cta-text .bi-currency-bitcoin {
-  background-color: rgb(0, 82, 255);
+  background-color: #005aec;
   color: rgb(255, 255, 255);
   padding: 0.2rem;
   border-radius: 50%;
@@ -163,6 +189,8 @@ header .get-started {
 }
 .sec-home .home-cta .cta-text > a {
   text-decoration: none;
+  color: #005aec;
+  background-color: #fefeff;
 }
 .sec-home .home-cta .cta-title {
   font-weight: 600;
@@ -174,12 +202,18 @@ header .get-started {
 }
 .sec-home .home-cta form input {
   width: 100%;
+  border: 1px solid rgb(108, 117, 125);
+}
+.sec-home .home-cta form input:focus {
+  outline: 1px solid #005aec;
+  border: none;
+  box-shadow: 0 0 10px #005aec;
 }
 .sec-home .home-cta form button {
   margin-top: 1rem;
   width: 100%;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   .sec-home .home-cta form {
     display: flex;
     align-items: center;
@@ -196,7 +230,7 @@ header .get-started {
 .sec-home .cta-img {
   flex: 0.8;
 }
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
   .sec-home .cta-img {
     display: none;
   }
@@ -213,6 +247,7 @@ header .get-started {
 }
 .sec-benefits .sec-intro p {
   color: rgb(108, 117, 125);
+  background-color: transparent;
 }
 .sec-benefits .benefit {
   display: flex;
@@ -234,9 +269,11 @@ header .get-started {
 }
 .sec-features p {
   color: rgb(108, 117, 125);
+  background-color: transparent;
 }
 .sec-features a {
-  color: rgb(0, 82, 255);
+  color: #005aec;
+  background-color: transparent;
   text-decoration: none;
 }
 .sec-features a:hover {
@@ -246,18 +283,17 @@ header .get-started {
 
 .sec-kpis {
   width: 100%;
-  background-color: rgb(0, 82, 255);
+  background-color: #005aec;
+  color: rgb(0, 0, 0);
 }
 .sec-kpis .kpi {
   font-weight: 600;
   padding: 1rem;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
 }
 .sec-kpis .kpi .kpi-element {
-  color: rgb(255, 255, 255);
   font-size: 3rem;
-}
-.sec-kpis .kpi p {
-  color: rgba(255, 255, 255, 0.6);
 }
 
 .sec-onboarding {
@@ -271,6 +307,7 @@ header .get-started {
 }
 .sec-onboarding .sec-intro p {
   color: rgb(108, 117, 125);
+  background-color: transparent;
 }
 .sec-onboarding hr {
   width: 15%;
@@ -278,6 +315,7 @@ header .get-started {
 
 .sec-promotion {
   background-color: rgb(245, 248, 255);
+  color: rgb(0, 0, 0);
 }
 .sec-promotion .promotion-cta {
   display: flex;
@@ -294,21 +332,23 @@ header .get-started {
   font-size: 1.2rem;
   font-weight: 600;
 }
-.sec-promotion .promotion-cta .btn-main {
-  align-self: flex-start;
-}
 .sec-promotion .cta-img {
   flex: 0.8;
 }
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
   .sec-promotion .cta-img {
     display: none;
   }
 }
 
+small a {
+  color: #005aec;
+  background-color: #fefeff;
+}
+
 footer {
   display: grid;
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 0.5fr);
   grid-template-areas: "brand-column" "about-us-column" "individuals-column" "assist-column" "resources-column" "developers-column";
 }
 footer .brand-column {
@@ -319,6 +359,9 @@ footer .brand-column {
   align-items: center;
   padding: 1rem;
   color: rgb(108, 117, 125);
+  background-color: transparent;
+  max-width: 80%;
+  justify-self: center;
 }
 footer .brand-column .logo {
   max-width: 10rem;
@@ -379,11 +422,14 @@ footer a {
   cursor: pointer;
   text-decoration: none;
   color: rgb(108, 117, 125);
+  background-color: transparent;
 }
 footer a:hover {
   color: rgb(108, 117, 125);
+  background-color: transparent;
 }
 footer .validators {
+  grid-area: brand-column;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -420,6 +466,9 @@ footer .validators {
     display: flex;
     align-items: flex-start;
     padding: 1rem;
+  }
+  footer h4 {
+    font-size: 1rem;
   }
 }
 
